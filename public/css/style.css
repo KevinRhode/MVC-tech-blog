@@ -1,5 +1,24 @@
-header, .project:not(:last-child) {
+header, .blogpost:not(:last-child) {
   border-bottom: 1px solid #ccc;
+}
+
+header {
+  background-color: #241011;
+}
+
+header nav a {
+  margin: 0 2.75rem;
+}
+
+header h1 {
+  background-color: #d8ebcf;
+  padding: 0 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0.5rem 0.25rem #aba9aa;
+  width: fit-content;
+}
+main {
+  background-color: #d8ebcf;
 }
 
 .no-button {
