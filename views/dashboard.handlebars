@@ -1,0 +1,15 @@
+<!-- Loop over each object in the blogpost array -->
+<ul style="list-style-type: none; padding-inline-start: 0px;">
+{{#each blogposts as |blogpost| }}
+<li>
+<div class="col mb-4 blogpost" style="border-radius: 1rem; min-height:3rem;background-color:#241011;">
+  <div class="blogpost-header" style="">
+    
+      <a href="/blogpost/{{blogpost.id}}">{{blogpost.title}}</a>     
+   
+  </div> 
+</div>
+</li>
+{{/each}}
+</ul>
+
