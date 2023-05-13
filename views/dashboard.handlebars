@@ -2,14 +2,16 @@
 <ul style="list-style-type: none; padding-inline-start: 0px;">
 {{#each blogposts as |blogpost| }}
 <li>
-<div class="col mb-4 blogpost" style="border-radius: 1rem; min-height:3rem;background-color:#241011;">
-  <div class="blogpost-header" style="">
-    
-      <a href="/blogpost/{{blogpost.id}}">{{blogpost.title}}</a>     
-   
+<div class="col mb-4 blogpost" style="border-radius: 1rem; min-height:3rem;background-color:#241011;display:flex;align-items:center;justify-content: space-between; padding: 0 1rem;">
+  <div class="" style="color:#FFF;">    
+      <a class="no-button" href="/blogpost/{{blogpost.id}}">{{blogpost.title}}</a>
   </div> 
+  <div style="color:#FFF;">{{format_date blogpost.date_created}}</div>
 </div>
 </li>
 {{/each}}
 </ul>
 
+<div class="newPOST-button">
+  + New Post
+</div>

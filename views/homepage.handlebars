@@ -1,11 +1,14 @@
 <!-- Loop over each object in the blogpost array -->
+<div> {{!-- to handle css justify content for dashboard--}}
 {{#each blogposts as |blogpost| }}
 <div class="col mb-4 blogpost">
   <div class="blogpost-header">
-    
-      <a href="/blogpost/{{blogpost.id}}">{{blogpost.title}}</a>       
-      Posted by {{blogpost.user.name}} on {{format_date blogpost.date_created}}       
-   
+    <div>
+      <a class="no-button" href="/blogpost/{{blogpost.id}}">{{blogpost.title}}</a> 
+    </div>
+    <div>
+      Posted by {{blogpost.user.name}} on {{format_date blogpost.date_created}}
+    </div>
   </div>
   <div class="blogpost-content">
      <p>
@@ -14,3 +17,4 @@
   </div>
 </div>
 {{/each}}
+</div>
