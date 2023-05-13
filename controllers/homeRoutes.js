@@ -18,16 +18,25 @@ router.get('/', async (req, res) => {
     const blogposts = blogpostData.map((blogpost) => blogpost.get({ plain: true }));
 
     // Pass serialized data and session flag into template
-    res.render('homepage', { 
-      blogposts, 
-      logged_in: req.session.logged_in 
-    });
+    if (req.session.logged_in) {
+      res.render('homepage', { 
+        layout:'main-auth',
+        blogposts, 
+        logged_in: req.session.logged_in 
+      });
+    }else{
+      res.render('homepage', { 
+        blogposts, 
+        logged_in: req.session.logged_in 
+      });
+    }
+   
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-router.get('/blogpost/:id', async (req, res) => {
+router.get('/blogpost/:id',withAuth, async (req, res) => {
   try {
     const blogpostData = await Blogpost.findByPk(req.params.id, {
       include: [
@@ -40,7 +49,7 @@ router.get('/blogpost/:id', async (req, res) => {
 
     const blogpost = blogpostData.get({ plain: true });
 
-    res.render('blogpost', {
+    res.render('commentBlogPost', {
       ...blogpost,
       logged_in: req.session.logged_in
     });
@@ -59,8 +68,9 @@ router.get('/dashboard', withAuth, async (req, res) => {
     });
 
     const user = userData.get({ plain: true });
-
+    
     res.render('dashboard', {
+      layout:'dash',
       ...user,
       logged_in: true
     });

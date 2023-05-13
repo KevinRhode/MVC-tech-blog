@@ -17,6 +17,7 @@ Blogpost.init(
       },
       description: {
         type: DataTypes.STRING,
+        allowNull: false,
       },
       date_created: {
         type: DataTypes.DATE,
@@ -25,6 +26,7 @@ Blogpost.init(
       },
       user_id: {
         type: DataTypes.INTEGER,
+        allowNull: true,
         references: {
           model: 'user',
           key: 'id',

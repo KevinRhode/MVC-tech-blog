@@ -4,7 +4,7 @@
 <li>
 <div class="col mb-4 blogpost" style="border-radius: 1rem; min-height:3rem;background-color:#241011;display:flex;align-items:center;justify-content: space-between; padding: 0 1rem;">
   <div class="" style="color:#FFF;">    
-      <a class="no-button" href="/blogpost/{{blogpost.id}}">{{blogpost.title}}</a>
+      <a class="no-button" href="/api/post/{{blogpost.id}}">{{blogpost.title}}</a>
   </div> 
   <div style="color:#FFF;">{{format_date blogpost.date_created}}</div>
 </div>
@@ -12,6 +12,7 @@
 {{/each}}
 </ul>
 
-<div class="newPOST-button">
+<a href="/api/post/create" class="no-button" id="newPOST-button" style="border-radius:0.5rem; padding: 0.75rem 1.25rem; width:fit-content; margin: 0 auto; background-color: #241011;">
   + New Post
-</div>
+</a>
+
