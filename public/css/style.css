@@ -51,9 +51,15 @@ main{
   justify-content: space-between;
   background-color: #241011;
   color: #FFF;
+  min-height: 2.15rem;
+}
+.blogpost-header div {
+  display: flex;
+  align-items: center;
+  padding: 0rem 1rem;
 }
 .blogpost-header a {
-  padding: 0.42rem;
+  /* padding: 0.42rem; */
   font-weight: bold;
   color: #FFF;
 
@@ -116,8 +122,20 @@ form .form-input{
 .btn.btn-primary{
   background-color: #aba9aa;
 }
-/* override */
 
+/* override */
 .btn.btn-primary:hover{
   background-color: #241011;
+}
+/* override */
+.container{
+  max-width: 1800px;
+}
+
+@media screen and (min-width:687px){
+  
+  header nav{
+    max-width: 343.5px;
+  }
+
 }
