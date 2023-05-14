@@ -43,13 +43,14 @@ const newPostHandler = async (event) => {
     // Collect values from the form
     const title = document.querySelector('#title').value.trim();
     const content = document.querySelector('#description').value.trim();  
+    console.log(content);
     
     if (event.target.children[2].children[0].hasAttribute('data-id')) {
       const id = event.target.children[2].children[0].getAttribute('data-id');
   
       const response = await fetch(`/api/post/edit/${id}`, {
         method: 'PUT',
-        body: JSON.stringify({ title, content }),
+        body: JSON.stringify({ title, description:content }),
         headers: {
           'Content-Type': 'application/json',
         },
