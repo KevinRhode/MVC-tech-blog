@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Blogpost, User } = require('../models');
+const { Blogpost, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -11,6 +11,9 @@ router.get('/', async (req, res) => {
           model: User,
           attributes: ['name'],
         },
+        {
+          model: Comment,
+        },
       ],
     });
 
@@ -18,7 +21,8 @@ router.get('/', async (req, res) => {
     const blogposts = blogpostData.map((blogpost) => blogpost.get({ plain: true }));
 
     // Pass serialized data and session flag into template
-    if (req.session.logged_in) {
+    if (req.
+      session.logged_in) {
       res.render('homepage', { 
         layout:'main-auth',
         blogposts, 
@@ -44,13 +48,51 @@ router.get('/blogpost/:id',withAuth, async (req, res) => {
           model: User,
           attributes: ['name'],
         },
+        {
+          model:Comment,
+          attributes: ['description'],
+        }
       ],
     });
 
     const blogpost = blogpostData.get({ plain: true });
 
     res.render('commentBlogPost', {
+      layout:'main-comment',
       ...blogpost,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/blogpost/view/:id',withAuth, async (req, res) => {
+  try {
+    const blogpostData = await Blogpost.findByPk(req.params.id, {
+      include: [
+        
+        {
+          model:Comment,
+          // attributes:['user_id','description'],
+          include:[{
+            model:User,
+            attributes:['name']
+        }]
+          
+        },
+        
+      ],
+    });
+    const comments = await Comment.findAll({where:{blogpost_id:req.params.id}},{include:[{model:User, attributes:['name']}]});
+    
+
+    const blogpost = blogpostData.get({ plain: true });
+    const comment= comments.map((comment)=> comment.get({plain:true}))
+    res.render('viewBlogpost', {
+      layout:'main-comment',
+      ...blogpost,
+      comment,
       logged_in: req.session.logged_in
     });
   } catch (err) {
