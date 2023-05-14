@@ -11,9 +11,9 @@ router.get('/', async (req, res) => {
           model: User,
           attributes: ['name'],
         },
-        {
-          model: Comment,
-        },
+      //   {
+      //     model: Comment,
+      //   },
       ],
     });
 
@@ -71,6 +71,10 @@ router.get('/blogpost/view/:id',withAuth, async (req, res) => {
   try {
     const blogpostData = await Blogpost.findByPk(req.params.id, {
       include: [
+        {
+          model:User,
+          attributes:['name']
+        },
         
         {
           model:Comment,
@@ -84,15 +88,15 @@ router.get('/blogpost/view/:id',withAuth, async (req, res) => {
         
       ],
     });
-    const comments = await Comment.findAll({where:{blogpost_id:req.params.id}},{include:[{model:User, attributes:['name']}]});
+    // const comments = await Comment.findAll({where:{blogpost_id:req.params.id}},{include:[{model:User, attributes:['name']}]});
     
 
     const blogpost = blogpostData.get({ plain: true });
-    const comment= comments.map((comment)=> comment.get({plain:true}))
+    // const comment= comments.map((comment)=> comment.get({plain:true}))
     res.render('viewBlogpost', {
       layout:'main-comment',
       ...blogpost,
-      comment,
+      // comment,
       logged_in: req.session.logged_in
     });
   } catch (err) {
