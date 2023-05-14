@@ -48,10 +48,10 @@ router.get('/blogpost/:id',withAuth, async (req, res) => {
           model: User,
           attributes: ['name'],
         },
-        {
-          model:Comment,
-          attributes: ['description'],
-        }
+        // {
+        //   model:Comment,
+        //   attributes: ['description'],
+        // }
       ],
     });
 
