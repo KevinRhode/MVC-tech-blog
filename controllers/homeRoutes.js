@@ -56,7 +56,7 @@ router.get('/blogpost/:id',withAuth, async (req, res) => {
     });
 
     const blogpost = blogpostData.get({ plain: true });
-
+    console.log(blogpost);
     res.render('commentBlogPost', {
       layout:'main-comment',
       ...blogpost,
