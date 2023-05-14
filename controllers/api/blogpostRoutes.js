@@ -49,8 +49,6 @@ router.post('/', async (req, res) => {
   }
 });
 
-
-
 router.put('/edit/:id',withAuth, async (req,res)=>{
   try {
     const updatedBlogpost = await Blogpost.update({
