@@ -19,14 +19,16 @@
 
 
 {{#each comments as |comment| }}
+
 <div class="access-border " style="margin:1rem 0rem;">
+  <div class="blogpost-header" ></div>{{!-- header styling to match other comment areas--}}
  
 <div class="access-login comment" style="padding-top:0.8rem">
     
 
-        <label>{{comment.description}}</label>
+        <label>{{comment.description}}</label>{{!-- content of the comment--}}
         <br>
-        <label>--{{comment.user.name}} , {{format_date comment.date_created}}</label>
+        <label>--{{comment.user.name}} , {{format_date comment.date_created}}</label>{{!-- name and date of when person placed comment --}}
         
       </div>
      
