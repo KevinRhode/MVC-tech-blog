@@ -64,6 +64,7 @@ router.get('/blogpost/:id',withAuth, async (req, res) => {
     });
   } catch (err) {
     res.status(500).json(err);
+    alert(json(err));
   }
 });
 
