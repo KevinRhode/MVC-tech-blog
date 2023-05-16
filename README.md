@@ -14,7 +14,6 @@ To manage blogposts about different topics, and allow users to comment and creat
 - [Credits](#credits)
 - [License](#license)
 
-
 ## User Story
 AS A developer who writes about tech  
 I WANT a CMS-style blog site  
@@ -89,6 +88,9 @@ To run the application use: npm start
 
 after which your localhost should now have it running on PORT 3001
 
+[Deployed Application](https://mvc-tech-blog-kevinrhode.herokuapp.com/)
+[Application Repo](https://github.com/KevinRhode/MVC-tech-blog)
+
 ## Credits
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript
@@ -102,4 +104,4 @@ https://sequelize.org/
 
 MIT License
 
-Copyright (c) [2023] [Kevin Rhode]
+Copyright (c) 2023 Kevin Rhode
