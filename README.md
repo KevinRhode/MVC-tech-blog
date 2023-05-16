@@ -88,7 +88,7 @@ To run the application use: npm start
 
 after which your localhost should now have it running on PORT 3001
 
-[Deployed Application](https://mvc-tech-blog-kevinrhode.herokuapp.com/)
+[Deployed Application](https://mvc-tech-blog-kevinrhode.herokuapp.com/)  
 [Application Repo](https://github.com/KevinRhode/MVC-tech-blog)
 
 ## Credits
