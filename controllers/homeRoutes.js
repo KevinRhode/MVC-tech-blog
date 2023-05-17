@@ -64,6 +64,7 @@ router.get('/blogpost/:id',withAuth, async (req, res) => {
     });
   } catch (err) {
     res.status(500).json(err);
+    //once customer has decided on design alerts will be removed
     alert(json(err));
   }
 });

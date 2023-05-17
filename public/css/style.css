@@ -95,6 +95,10 @@ main{
   padding: 0rem 0.80rem 0.80rem 0.80rem;
   width: 100%;
 }
+.access-login.comment label{
+  margin:0.6rem 0rem;
+ }
+ 
 .btn-access{
   width: 100%;
   background-color: #aba9aa;

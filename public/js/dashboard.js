@@ -16,7 +16,8 @@ const newPostHandler = async (event) => {
       if (response.ok) {
         document.location.replace('/dashboard');
       } else {
-        alert('Failed to create project');
+        //once customer has decided on design alerts will be removed
+        alert('Failed to create blogpost');
       }
     }
   };
@@ -34,6 +35,7 @@ const newPostHandler = async (event) => {
       if (response.ok) {
         document.location.replace('/dashboard');
       } else {
+        //once customer has decided on design alerts will be removed
         alert('Failed to delete blogpost');
       }
     }
@@ -59,6 +61,7 @@ const newPostHandler = async (event) => {
       if (response.ok) {
         document.location.replace('/dashboard');
       } else {
+        //once customer has decided on design alerts will be removed
         alert('Failed to edit blogpost');
       }
     }

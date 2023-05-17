@@ -17,6 +17,7 @@ const loginFormHandler = async (event) => {
       // If successful, redirect the browser to the profile page
       document.location.replace('/dashboard');
     } else {
+      //once customer has decided on design alerts will be removed
       alert(response.statusText);
     }
   }
@@ -39,6 +40,7 @@ const signupFormHandler = async (event) => {
     if (response.ok) {
       document.location.replace('/dashboard');
     } else {
+      //once customer has decided on design alerts will be removed
       alert(response.statusText);
     }
   }

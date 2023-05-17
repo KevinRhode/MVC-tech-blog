@@ -18,7 +18,8 @@ const newCommentHandler = async (event) => {
       if (response.ok) {
         document.location.replace(`/blogpost/view/${data.dataset.bid}`);
       } else {
-        alert('Failed to create project');
+        //once customer has decided on design alerts will be removed
+        alert('Failed to create blogpost');
       }
     }
   };
