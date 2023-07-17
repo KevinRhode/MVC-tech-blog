@@ -93,6 +93,11 @@ after which your localhost should now have it running on PORT 3001
 [Deployed Application](https://mvc-tech-blog-kevinrhode.herokuapp.com/)  
 [Application Repo](https://github.com/KevinRhode/MVC-tech-blog)
 
+Preview:  
+![Image of homepage](./public/images/mvc-tech-blog-kevinrhode.herokuapp.com_.png)
+![Image of your dashboard](./public/images/mvc-tech-blog-kevinrhode.herokuapp.com_dashboard.png)
+![Image of what you should see when selecting a Post](./public/images/mvc-tech-blog-kevinrhode.herokuapp.com_blogpost_5.png)
+
 ## Credits
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript
